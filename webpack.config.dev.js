@@ -2,9 +2,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-  debug: true,
   devtool: 'inline-source-map',
-  noInfo: false,
   entry: [
     path.resolve(__dirname, 'src/index')
   ],
@@ -23,7 +21,7 @@ export default {
   ],
   module: {
     loaders: [
-      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
+      {test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
       {test: /\.css$/, loaders: ['style','css']}
     ]
   }
